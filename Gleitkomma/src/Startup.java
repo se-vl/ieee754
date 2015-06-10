@@ -11,6 +11,7 @@ public class Startup
 {
     public static void main(String[] args)
     {
+        //        System.out.println(1L << 53);
         // Swing-GUIs müssen im "Event-Dispatch-Thread" zusammengebaut werden: 
         // https://docs.oracle.com/javase/tutorial/uiswing/concurrency/initial.html
         SwingUtilities.invokeLater(new RequestToBuildGUI());

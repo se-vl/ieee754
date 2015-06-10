@@ -48,6 +48,7 @@ public class GleitkommaUI
     private void initFrame()
     {
         _frame = new JFrame(FENSTER_TITEL);
+        _frame.setBounds(32, 0, 1, 1);
         _frame.setLayout(new BoxLayout(_frame.getContentPane(),
                 BoxLayout.Y_AXIS));
     }

@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
  * @author Fredrik Winkler
  * @version 10. Juni 2015
  */
-public class GleitkommaWerkzeug implements ActionListener
+public class GleitkommaWerkzeug
 {
     private GleitkommaUI _ui;
 
@@ -25,13 +25,30 @@ public class GleitkommaWerkzeug implements ActionListener
 
     private void registriereListener()
     {
-        _ui.getKonvertiereButton().addActionListener(this);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent event)
-    {
-        verarbeiteEingabe();
+        _ui.getKonvertiereButton().addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                verarbeiteEingabe();
+            }
+        });
+        _ui.getVorgaengerButton().addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                setzeVorgaenger();
+            }
+        });
+        _ui.getNachfolgerButton().addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                setzeNachfolger();
+            }
+        });
     }
 
     private void verarbeiteEingabe()
